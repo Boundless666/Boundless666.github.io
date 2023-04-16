@@ -6,6 +6,8 @@ import { NavConfig } from "../configBuild";
 const generateSidebar = () => {
   const url = import.meta.url;
   const rootPath = url.split("///")[1].split("/.vitepress")[0];
+  console.log(`output->rootPath`, rootPath);
+  // console.log(`output->`, );
   var sidebarM: DefaultTheme.SidebarMulti = {};
   // console.log(`output->rootPath`, rootPath);
   const navs = NavConfig() as any[];
@@ -21,9 +23,13 @@ const generateSidebar = () => {
   });
   // var sidebarItems: DefaultTheme.Sidebar = [];
 
-  console.log(`output->`, sidebarM);
+  // console.log(`output->`, sidebarM);
   // readAll("D:/documents/computer/computer/docs", "/front/vue/", sidebarItems);
   // console.log(`output->url`, url.split("/docs"));
+  fs.writeFileSync(
+    rootPath + "/.vitepress/configBuild/sidebar.json",
+    JSON.stringify(sidebarM)
+  );
   return sidebarM;
 };
 
