@@ -5,7 +5,7 @@ import * as Config from "./configBuild";
 export default defineConfig({
   title: "Atman Docs",
   description: "Record my learn.",
-  base: "/",
+  base: "/docs/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: Config.NavConfig(),
