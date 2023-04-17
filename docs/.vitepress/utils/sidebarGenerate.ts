@@ -7,8 +7,10 @@ const generateSidebar = () => {
   const url = import.meta.url;
   console.log(`output->url`, url);
   let rootPath = url.split("///")[1].split("/.vitepress")[0];
-  if (rootPath.includes("home/runner/work"))
+  if (rootPath.includes("/runner/work")) {
+    console.log(`output->a`, 100);
     rootPath = rootPath.substring(0, rootPath.length - 5);
+  }
   console.log(`output->rootPath`, rootPath);
   var sidebarM: DefaultTheme.SidebarMulti = {};
   const navs = NavConfig() as any[];
