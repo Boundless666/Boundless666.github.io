@@ -9,11 +9,12 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: Config.NavConfig(),
-
+    logo: "/logo.png",
     sidebar: Config.SidebarConfig(),
 
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/boundless666" }],
   },
+  head: [
+    ["link", { rel: "shortcut icon", href: "/logo.png", type: "image/x-icon" }],
+  ],
 });

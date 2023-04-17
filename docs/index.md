@@ -3,25 +3,21 @@
 layout: home
 
 hero:
-  name: "Atman Docs"
-  text: "Record my learn."
-  tagline: My great project tagline
+  name: "嘿，朋友"
+  text: "我过得挺好"
+  tagline: "希望你也是."
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 岂能尽如人意
+      link: /backend/dotnetcore/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 但求无愧我心
+      link: /front/vue/
     - theme: brand
-      text: 前端
-      link: /front
-
+      text: 祝你开心好梦
+      link: /computer_basic/composition_principle/
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: 😉
+    title: 我可以的
+    details: Maybe not today,maybe not tomorrow,and maybe not next month.But only thing is ture,i will be the champion.I promise.
 ---

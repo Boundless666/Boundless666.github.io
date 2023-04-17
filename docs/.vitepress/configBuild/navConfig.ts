@@ -24,6 +24,36 @@ const NavConfig = (): DefaultTheme.NavItem[] => {
         },
       ],
     },
+    {
+      text: "计算机基础",
+      items: [
+        {
+          text: "组成原理",
+          link: "/computer_basic/composition_principle/",
+          activeMatch: "/computer_basic/composition_principle",
+        },
+        {
+          text: "操作系统",
+          link: "/computer_basic/operation_system/",
+          activeMatch: "/computer_basic/operation_system",
+        },
+        {
+          text: "数据结构",
+          link: "/computer_basic/data_structure/",
+          activeMatch: "/computer_basic/data_structure",
+        },
+        {
+          text: "网络",
+          link: "/computer_basic/network/",
+          activeMatch: "/computer_basic/network",
+        },
+      ],
+    },
+    {
+      text: "Linux",
+      link: "/linux/",
+      activeMatch: "/linux",
+    },
   ];
 };
 

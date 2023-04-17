@@ -6,10 +6,8 @@ import { NavConfig } from "../configBuild";
 const generateSidebar = () => {
   const url = import.meta.url;
   const rootPath = url.split("///")[1].split("/.vitepress")[0];
-  console.log(`output->rootPath`, rootPath);
-  // console.log(`output->`, );
-  var sidebarM: DefaultTheme.SidebarMulti = {};
   // console.log(`output->rootPath`, rootPath);
+  var sidebarM: DefaultTheme.SidebarMulti = {};
   const navs = NavConfig() as any[];
   navs.forEach((navItem) => {
     if (navItem.hasOwnProperty("items")) {
