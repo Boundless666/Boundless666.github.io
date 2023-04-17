@@ -5,29 +5,32 @@ import { NavConfig } from "../configBuild";
 
 const generateSidebar = () => {
   const url = import.meta.url;
-  const rootPath = url.split("///")[1].split("/.vitepress")[0];
-  // console.log(`output->rootPath`, rootPath);
+  console.log(`output->url`, url);
+  let rootPath = url.split("///")[1].split("/.vitepress")[0];
+  console.log(`output->rootPath`, rootPath);
+  rootPath = rootPath.substring(0, rootPath.length - 5);
+  console.log(`output->rootPath`, rootPath);
   var sidebarM: DefaultTheme.SidebarMulti = {};
   const navs = NavConfig() as any[];
-  navs.forEach((navItem) => {
-    if (navItem.hasOwnProperty("items")) {
-      (navItem.items as DefaultTheme.NavItemWithLink[]).forEach((item) => {
-        // console.log(`output->item.`, item.link);
-        // sidebarM[item.link] = [];
-        getDocs(rootPath, item.link, sidebarM);
-      });
-      // console.log(`output->`, navItem.items);
-    }
-  });
+  // navs.forEach((navItem) => {
+  //   if (navItem.hasOwnProperty("items")) {
+  //     (navItem.items as DefaultTheme.NavItemWithLink[]).forEach((item) => {
+  //       // console.log(`output->item.`, item.link);
+  //       // sidebarM[item.link] = [];
+  //       getDocs(rootPath, item.link, sidebarM);
+  //     });
+  //     // console.log(`output->`, navItem.items);
+  //   }
+  // });
   // var sidebarItems: DefaultTheme.Sidebar = [];
 
   // console.log(`output->`, sidebarM);
   // readAll("D:/documents/computer/computer/docs", "/front/vue/", sidebarItems);
   // console.log(`output->url`, url.split("/docs"));
-  fs.writeFileSync(
-    rootPath + "/.vitepress/configBuild/sidebar.json",
-    JSON.stringify(sidebarM)
-  );
+  // fs.writeFileSync(
+  //   rootPath + "/.vitepress/configBuild/sidebar.json",
+  //   JSON.stringify(sidebarM)
+  // );
   return sidebarM;
 };
 
