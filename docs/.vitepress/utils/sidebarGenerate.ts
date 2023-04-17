@@ -7,21 +7,21 @@ const generateSidebar = () => {
   const url = import.meta.url;
   console.log(`output->url`, url);
   let rootPath = url.split("///")[1].split("/.vitepress")[0];
-  console.log(`output->rootPath`, rootPath);
-  rootPath = rootPath.substring(0, rootPath.length - 5);
+  if (rootPath.includes("home/runner/work"))
+    rootPath = rootPath.substring(0, rootPath.length - 5);
   console.log(`output->rootPath`, rootPath);
   var sidebarM: DefaultTheme.SidebarMulti = {};
   const navs = NavConfig() as any[];
-  // navs.forEach((navItem) => {
-  //   if (navItem.hasOwnProperty("items")) {
-  //     (navItem.items as DefaultTheme.NavItemWithLink[]).forEach((item) => {
-  //       // console.log(`output->item.`, item.link);
-  //       // sidebarM[item.link] = [];
-  //       getDocs(rootPath, item.link, sidebarM);
-  //     });
-  //     // console.log(`output->`, navItem.items);
-  //   }
-  // });
+  navs.forEach((navItem) => {
+    if (navItem.hasOwnProperty("items")) {
+      (navItem.items as DefaultTheme.NavItemWithLink[]).forEach((item) => {
+        // console.log(`output->item.`, item.link);
+        // sidebarM[item.link] = [];
+        getDocs(rootPath, item.link, sidebarM);
+      });
+      // console.log(`output->`, navItem.items);
+    }
+  });
   // var sidebarItems: DefaultTheme.Sidebar = [];
 
   // console.log(`output->`, sidebarM);

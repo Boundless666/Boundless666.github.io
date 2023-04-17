@@ -1,11 +1,11 @@
 {
-  "devDependencies": {
-    "@types/node": "^18.15.11",
-    "vitepress": "1.0.0-alpha.69"
-  },
-  "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
-  }
+    "devDependencies": {
+        "@types/node": "^18.15.11",
+        "vitepress": "1.0.0-alpha.69"
+    },
+    "scripts": {
+        "dev": "vitepress dev docs --mode development",
+        "build": "vitepress build docs --mode production",
+        "preview": "vitepress preview docs"
+    }
 }
