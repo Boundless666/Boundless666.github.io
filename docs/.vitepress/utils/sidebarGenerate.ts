@@ -9,6 +9,7 @@ const generateSidebar = () => {
   let rootPath = url.split("///")[1].split("/.vitepress")[0];
   if (rootPath.includes("/runner/work")) {
     // rootPath = rootPath.substring(0, rootPath.length - 5);
+    rootPath = "/" + rootPath;
   }
   console.log(`output->rootPath`, rootPath);
   var sidebarM: DefaultTheme.SidebarMulti = {};
