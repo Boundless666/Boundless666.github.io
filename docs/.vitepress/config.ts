@@ -5,7 +5,7 @@ import * as Config from "./configBuild";
 export default defineConfig({
   title: "Atman Docs",
   description: "Record my learn.",
-  base: "/",
+  // base: "/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: Config.NavConfig(),
@@ -14,7 +14,5 @@ export default defineConfig({
 
     socialLinks: [{ icon: "github", link: "https://github.com/boundless666" }],
   },
-  head: [
-    ["link", { rel: "shortcut icon", href: "/logo.png", type: "image/x-icon" }],
-  ],
+  head: [["link", { rel: "icon", href: "/logo.png" }]],
 });
