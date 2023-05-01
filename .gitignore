@@ -13,3 +13,5 @@ dist
 *.ntvs*
 *.njsproj
 *.sln
+
+*.7z
