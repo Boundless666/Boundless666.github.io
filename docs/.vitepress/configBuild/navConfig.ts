@@ -6,7 +6,7 @@ const NavConfig = (): DefaultTheme.NavItem[] => {
     {
       text: "c 语言",
       link: "/computer_basic/c language/",
-      activeMatch: "/c language",
+      activeMatch: "/computer_basic/c language",
     },
     // {
     //   text: "前端",

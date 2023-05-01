@@ -19,5 +19,5 @@ hero:
 features:
   - icon: 😉
     title: 我可以的
-    details: Maybe not today,maybe not tomorrow,and maybe not next month.But only thing is ture,i will be the champion.I promise.
+    details: Maybe not today,maybe not tomorrow,and maybe not next month.But only thing is true,i will be the champion one day.I promise.
 ---

@@ -33,10 +33,10 @@ const generateSidebar = () => {
   // console.log(`output->`, sidebarM);
   // readAll("D:/documents/computer/computer/docs", "/front/vue/", sidebarItems);
   // console.log(`output->url`, url.split("/docs"));
-  fs.writeFileSync(
-    rootPath + "/.vitepress/configBuild/sidebar.json",
-    JSON.stringify(sidebarM)
-  );
+  // fs.writeFileSync(
+  //   rootPath + "/.vitepress/configBuild/sidebar.json",
+  //   JSON.stringify(sidebarM)
+  // );
   return sidebarM;
 };
 
