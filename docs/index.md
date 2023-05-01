@@ -9,13 +9,13 @@ hero:
   actions:
     - theme: brand
       text: 岂能尽如人意
-      link: /backend/dotnetcore/
+      # link: /backend/dotnetcore/
     - theme: alt
       text: 但求无愧我心
-      link: /front/vue/
+      # link: /front/vue/
     - theme: brand
       text: 祝你开心好梦
-      link: /computer_basic/composition_principle/
+      link: /computer_basic/c_language/
 features:
   - icon: 😉
     title: 我可以的
