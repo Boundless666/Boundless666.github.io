@@ -19,9 +19,13 @@ const generateSidebar = () => {
       (navItem.items as DefaultTheme.NavItemWithLink[]).forEach((item) => {
         // console.log(`output->item.`, item.link);
         // sidebarM[item.link] = [];
+        console.log(`${rootPath} \t ${item.link} \t ${sidebarM}`);
         getDocs(rootPath, item.link, sidebarM);
       });
       // console.log(`output->`, navItem.items);
+    }
+    if (navItem.hasOwnProperty("activeMatch")) {
+      getDocs(rootPath, navItem.link, sidebarM);
     }
   });
   // var sidebarItems: DefaultTheme.Sidebar = [];
@@ -29,10 +33,10 @@ const generateSidebar = () => {
   // console.log(`output->`, sidebarM);
   // readAll("D:/documents/computer/computer/docs", "/front/vue/", sidebarItems);
   // console.log(`output->url`, url.split("/docs"));
-  // fs.writeFileSync(
-  //   rootPath + "/.vitepress/configBuild/sidebar.json",
-  //   JSON.stringify(sidebarM)
-  // );
+  fs.writeFileSync(
+    rootPath + "/.vitepress/configBuild/sidebar.json",
+    JSON.stringify(sidebarM)
+  );
   return sidebarM;
 };
 
