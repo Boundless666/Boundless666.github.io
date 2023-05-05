@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 岂能尽如人意
-      # link: /backend/dotnetcore/
+      link: http://atman.wiki
     - theme: alt
       text: 但求无愧我心
       # link: /front/vue/

@@ -3,13 +3,13 @@ import * as Config from "./configBuild";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Atman Docs",
+  title: "Mxl",
   description: "Record my learn.",
   base: "/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: Config.NavConfig(),
-    logo: "/logo.png",
+    logo: "/avatar.jpg",
     sidebar: Config.SidebarConfig(),
 
     socialLinks: [
@@ -28,5 +28,5 @@ export default defineConfig({
       },
     ],
   },
-  head: [["link", { rel: "icon", href: "/logo.png" }]],
+  head: [["link", { rel: "icon", href: "/avatar.ico" }]],
 });
