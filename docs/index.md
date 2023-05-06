@@ -3,21 +3,24 @@
 layout: home
 
 hero:
-  name: "嘿，朋友"
-  text: "我过得挺好"
-  tagline: "希望你也是."
+  name: "Mxl"
+  text: "生长·摆烂"
+  tagline: "反复折磨..."
   actions:
     - theme: brand
-      text: 岂能尽如人意
+      text: 主页
       link: http://atman.wiki
     - theme: alt
-      text: 但求无愧我心
+      text: 灰色的无效点击
       # link: /front/vue/
     - theme: brand
-      text: 祝你开心好梦
+      text: c语言
       link: /computer_basic/c_language/
 features:
-  - icon: 😉
-    title: 我可以的
-    details: Maybe not today,maybe not tomorrow,and maybe not next month.But only thing is true,i will be the champion one day.I promise.
+  - icon: 😗
+    title: 开心好梦
+    details: emm 眼前一片黑... 该往哪走.
+  # - icon: 😉
+  #   title: 我可以的
+  #   details: Maybe not today,maybe not tomorrow,and maybe not next month.But only thing is true,i will be the champion one day.I promise.
 ---
