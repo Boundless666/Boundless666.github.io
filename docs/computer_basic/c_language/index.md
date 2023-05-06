@@ -1,4 +1,3 @@
-#### c语言学习笔记
+#### c 语言学习笔记
 
-> 参考书籍: The C Programing Language
-
+> 参考书籍: The C Programming Language
