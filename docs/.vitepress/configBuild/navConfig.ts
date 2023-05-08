@@ -8,6 +8,11 @@ const NavConfig = (): DefaultTheme.NavItem[] => {
       link: "/computer_basic/c_language/",
       activeMatch: "/computer_basic/c_language",
     },
+    {
+      text: "c#",
+      link: "/backend/cSharp/",
+      activeMatch: "/backend/cSharp",
+    },
     // {
     //   text: "前端",
     //   items: [
