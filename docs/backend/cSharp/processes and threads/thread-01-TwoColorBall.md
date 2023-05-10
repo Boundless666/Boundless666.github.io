@@ -1,6 +1,6 @@
-双色球demo 
+双色球 demo
 
-同时间段内产生6个红色不重复的小球号码 以及一个蓝色的小球号码
+同时间段内产生 6 个红色不重复的小球号码 以及一个蓝色的小球号码
 
 ```c#
 private readonly string[] redNumbers = new string[] { "01", "02", "03", "04", "05",
@@ -12,8 +12,6 @@ private readonly string[] blueNumbers = new string[] { "01", "02", "03", "04", "
     "06", "07", "08", "09", "10", "11",
     "12", "13", "14", "15", "16"};
 ```
-
-
 
 ```c#
 private void Start()
@@ -64,8 +62,6 @@ private int GetRandomSeed()
 }
 ```
 
-
-
 ##### 线程间操作无效问题
 
 [如何对控件进行线程安全的调用 - Windows Forms .NET | Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/desktop/winforms/controls/how-to-make-thread-safe-calls?view=netdesktop-7.0#safe-cross-thread-calls)
@@ -78,7 +74,7 @@ while (true)
     WriteTextSafe(lab, blueNumbers[resIndex]);
 }
 ...
-    
+
 
 private void WriteTextSafe(Label lab, string text)
 {
@@ -94,8 +90,6 @@ private void WriteTextSafe(Label lab, string text)
 }
 ```
 
-
-
 ##### 控制停止
 
 > |            | 开始按钮状态 |                              | 停止按钮状态 |
@@ -108,7 +102,7 @@ private void WriteTextSafe(Label lab, string text)
 private void Start(){
     ResetLabels();
     btnStart.Enabled = false;	//点击开始后  开始按钮被禁用
-    
+
     ...
         else if (lab.Name.Contains("Red"))
         {
@@ -126,7 +120,7 @@ private void Start(){
             });
         }
     ...
-     
+
     // 运行工作线程  后台一直判断:  如果7个号码都开始产生出来了(都不为初始值)  那么此时 停止按钮启用
     Task.Run(() =>
     {
@@ -142,8 +136,8 @@ private bool IsRedExists(string number)
 {
     foreach(var control in groupBox1.Controls)
     {
-        if (control is Label lbl 
-            && lbl.Name.Contains("Red") 
+        if (control is Label lbl
+            && lbl.Name.Contains("Red")
             && lbl.Text.Equals(number))
             return true;
     }
@@ -168,8 +162,6 @@ private void btnStop_Click(object sender, EventArgs e)
 }
 ```
 
-
-
 ... 还没完 ...
 
 生成一堆号码后...展示结果
@@ -178,19 +170,14 @@ private void btnStop_Click(object sender, EventArgs e)
 
 > 1. 未处理红色去重
 >
-> 2. 点击停止  线程while循环停止  但是循环里面的还有可能继续执行  导致停止时的数据  与展示的数据不一致
+> 2. 点击停止 线程 while 循环停止 但是循环里面的还有可能继续执行 导致停止时的数据 与展示的数据不一致
 
 有好几处改动 未贴代码...去我的仓库里面看吧
-
-
 
 完整项目代码:
 
 [MultipleThreadDemo/Form1.cs · 无涯/growth_c-sharp_2023 - 码云 - 开源中国 (gitee.com)](https://gitee.com/giteemxl/growth_c-sharp_2023/blob/master/MultipleThreadDemo/Form1.cs)
 
+##### Random 生成随机数重复
 
-
-##### Random生成随机数重复
-
-[(4条消息) 解决C# Random生成随机数重复的问题_c# random重复_zhenufo的博客-CSDN博客](https://blog.csdn.net/zhenufo/article/details/79373124)
-
+[(4 条消息) 解决 C# Random 生成随机数重复的问题\_c# random 重复\_zhenufo 的博客-CSDN 博客](https://blog.csdn.net/zhenufo/article/details/79373124)
