@@ -14,8 +14,8 @@ hero:
       text: 灰色的无效点击
       # link: /front/vue/
     - theme: brand
-      text: c语言
-      link: /computer_basic/c_language/
+      text: c#
+      link: /backend/cSharp/
 features:
   - icon: 😗
     title: 开心好梦
