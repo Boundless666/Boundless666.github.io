@@ -1,0 +1,1 @@
+<<< @/../codes/c/chapter04/getline.c

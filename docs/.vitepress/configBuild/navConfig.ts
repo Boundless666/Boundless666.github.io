@@ -1,3 +1,10 @@
+/*
+ * @Author: 无涯 (mxl233@qq.com)
+ * @Date: 2023-05-31 23:05:37
+ * @LastEditors: 开心好梦🥳
+ * @LastEditTime: 2023-08-16 10:32:01
+ * @FilePath: navConfig.ts
+ */
 import { DefaultTheme } from "vitepress";
 
 const NavConfig = (): DefaultTheme.NavItem[] => {
@@ -12,6 +19,17 @@ const NavConfig = (): DefaultTheme.NavItem[] => {
       text: "c#",
       link: "/backend/cSharp/",
       activeMatch: "/backend/cSharp",
+    },
+    {
+      text: "工作经历",
+      items: [
+        { text: "excel", link: "/other/Excel/", activeMatch: "/other/Excel" },
+        {
+          text: "python",
+          link: "/other/python/",
+          activeMatch: "/other/python",
+        },
+      ],
     },
     // {
     //   text: "前端",

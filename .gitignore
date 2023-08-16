@@ -6,6 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 dist
 
+./docs/work/
+
 # Editor directories and files
 .idea
 .vscode

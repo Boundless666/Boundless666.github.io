@@ -1,0 +1,1 @@
+<<< @/../codes/c/chapter03/ex-01-binsearch.c

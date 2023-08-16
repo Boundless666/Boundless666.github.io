@@ -1,3 +1,10 @@
+/*
+ * @Author: 无涯 (mxl233@qq.com)
+ * @Date: 2023-05-31 23:05:37
+ * @LastEditors: 开心好梦🥳
+ * @LastEditTime: 2023-08-16 11:29:11
+ * @FilePath: sidebarGenerate.ts
+ */
 import { DefaultTheme } from "vitepress";
 import fs from "fs";
 import path from "path";
@@ -53,11 +60,15 @@ const readAll = (
   docPath: string
 ): DefaultTheme.SidebarItem[] => {
   let files = fs.readdirSync(rootPath + docPath);
+  // console.log("files:", files);
   let sidebarItems: DefaultTheme.SidebarItem[] = [];
   files.forEach((item) => {
     let tempPath = path.join(rootPath + docPath, item);
     let stats = fs.statSync(tempPath);
     if (stats.isDirectory()) {
+      if(item == "assets")
+        return;
+
       // console.log(`output->stats`, tempPath);
       let dirItem: DefaultTheme.SidebarItem = {
         text: item,

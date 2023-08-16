@@ -7,15 +7,16 @@ hero:
   text: "生长·摆烂"
   tagline: "反复折磨..."
   actions:
-    - theme: brand
+    - theme: alt
       text: 主页
       link: http://atman.wiki
-    - theme: alt
-      text: 灰色的无效点击
-      # link: /front/vue/
     - theme: brand
-      text: c#
-      link: /backend/cSharp/
+      text: 一些经历
+      link: /other/Excel/
+      # link: /front/vue/
+    # - theme: brand
+    #   text: c#
+    #   link: /backend/cSharp/
 features:
   - icon: 😗
     title: 开心好梦

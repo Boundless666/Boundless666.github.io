@@ -1,3 +1,10 @@
+/*
+ * @Author: 无涯 (mxl233@qq.com)
+ * @Date: 2023-05-31 23:05:37
+ * @LastEditors: 开心好梦🥳
+ * @LastEditTime: 2023-08-16 09:49:01
+ * @FilePath: config.ts
+ */
 import { defineConfig } from "vitepress";
 import * as Config from "./configBuild";
 
@@ -9,7 +16,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: Config.NavConfig(),
-    logo: "/avatar.jpg",
+    logo: "/logo.png",
     sidebar: Config.SidebarConfig(),
 
     socialLinks: [
@@ -28,5 +35,5 @@ export default defineConfig({
       },
     ],
   },
-  head: [["link", { rel: "icon", href: "/avatar.ico" }]],
+  head: [["link", { rel: "icon", href: "/logo.ico" }]],
 });
