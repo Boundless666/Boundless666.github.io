@@ -2,11 +2,15 @@
  * @Author: 无涯 (mxl233@qq.com)
  * @Date: 2023-05-31 23:05:37
  * @LastEditors: 开心好梦🥳
- * @LastEditTime: 2023-08-16 10:32:01
+ * @LastEditTime: 2023-08-17 11:20:06
  * @FilePath: navConfig.ts
  */
 import { DefaultTheme } from "vitepress";
 
+/**
+ * 导航配置  只有在这里面配置大模块  才会去读取相应模块下面的文件
+ * @returns 导航项数组
+ */
 const NavConfig = (): DefaultTheme.NavItem[] => {
   return [
     { text: "Home", link: "/" },

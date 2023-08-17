@@ -2,7 +2,7 @@
  * @Author: 无涯 (mxl233@qq.com)
  * @Date: 2023-05-31 23:05:37
  * @LastEditors: 开心好梦🥳
- * @LastEditTime: 2023-08-16 11:29:11
+ * @LastEditTime: 2023-08-17 13:43:22
  * @FilePath: sidebarGenerate.ts
  */
 import { DefaultTheme } from "vitepress";
@@ -11,10 +11,9 @@ import path from "path";
 import { NavConfig } from "../configBuild";
 
 const generateSidebar = () => {
-  const url = import.meta.url;
-  console.log(`output->url`, url);
-  let rootPath = url.split("///")[1].split("/.vitepress")[0];
-  if (rootPath.includes("/runner/work")) {
+  const url = import.meta.url; // 当前文件的完整目录
+  let rootPath = url.split("///")[1].split("/.vitepress")[0]; // 切分 使其为docs目录
+  if (rootPath.includes("/runner/work")) { // 处理github workflow目录问题
     // rootPath = rootPath.substring(0, rootPath.length - 5);
     rootPath = "/" + rootPath;
   }
@@ -22,31 +21,25 @@ const generateSidebar = () => {
   var sidebarM: DefaultTheme.SidebarMulti = {};
   const navs = NavConfig() as any[];
   navs.forEach((navItem) => {
-    if (navItem.hasOwnProperty("items")) {
+    if (navItem.hasOwnProperty("items")) { // 二级菜单处理(不是多级菜单处理)
       (navItem.items as DefaultTheme.NavItemWithLink[]).forEach((item) => {
-        // console.log(`output->item.`, item.link);
-        // sidebarM[item.link] = [];
-        console.log(`${rootPath} \t ${item.link} \t ${sidebarM}`);
+        // console.log(`${rootPath} \t ${item.link} \t ${sidebarM}`);
         getDocs(rootPath, item.link, sidebarM);
       });
-      // console.log(`output->`, navItem.items);
     }
     if (navItem.hasOwnProperty("activeMatch")) {
       getDocs(rootPath, navItem.link, sidebarM);
     }
   });
-  // var sidebarItems: DefaultTheme.Sidebar = [];
-
-  // console.log(`output->`, sidebarM);
-  // readAll("D:/documents/computer/computer/docs", "/front/vue/", sidebarItems);
-  // console.log(`output->url`, url.split("/docs"));
-  // fs.writeFileSync(
-  //   rootPath + "/.vitepress/configBuild/sidebar.json",
-  //   JSON.stringify(sidebarM)
-  // );
   return sidebarM;
 };
 
+/**
+ * 
+ * @param rootPath 所有文档的根目录 也就是docs
+ * @param docPath 每个模块的目录
+ * @param sidebarMult 侧边菜单栏集合
+ */
 const getDocs = (
   rootPath: string,
   docPath: string,
@@ -55,12 +48,20 @@ const getDocs = (
   sidebarMult[docPath] = readAll(rootPath, docPath);
 };
 
+/**
+ * 递归读取当前模块目录下的所有文件
+ * @param rootPath 所有文档的根目录 也就是docs
+ * @param docPath 单个模块的目录
+ * @returns 返回文件项集合
+ */
 const readAll = (
   rootPath: string,
   docPath: string
 ): DefaultTheme.SidebarItem[] => {
   let files = fs.readdirSync(rootPath + docPath);
-  // console.log("files:", files);
+  // console.log("files before handle:", files);
+  files = ignoreHandle(rootPath + docPath, files);
+  // console.log("files after handle:", files);
   let sidebarItems: DefaultTheme.SidebarItem[] = [];
   files.forEach((item) => {
     let tempPath = path.join(rootPath + docPath, item);
@@ -101,5 +102,25 @@ const fileType = (fileName: string) => {
   var ext = fileName.substring(index + 1);
   return ext.toLowerCase();
 };
+
+/**
+ * 指定忽略某些文件
+ * @param currentRootPath 当前要处理文件集合的所在目录
+ * @param files 文件集合
+ * @returns 过滤后的文件集合
+ */
+const ignoreHandle = (currentRootPath,files: string[]) =>{
+  if(files.includes(".fileignore")){
+    let data = fs.readFileSync(currentRootPath + "/.fileignore");
+    let arr = data.toString().split('\n');
+    arr = arr.map((value) => value = value.replace(/\s+$/, ""));
+    arr.push('.fileignore');
+    // console.log(arr)
+    files = files.filter((value)=>{
+      return !arr.includes(value);
+    })
+  }
+  return files;
+}
 
 export { generateSidebar };
