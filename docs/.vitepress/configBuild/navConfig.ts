@@ -33,6 +33,11 @@ const NavConfig = (): DefaultTheme.NavItem[] => {
           link: "/other/python/",
           activeMatch: "/other/python",
         },
+        {
+          text: "fun",
+          link: "/other/Fun/",
+          activeMatch: "/other/Fun",
+        },
       ],
     },
     // {
