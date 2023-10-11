@@ -1,8 +1,8 @@
 /*
  * @Author: 无涯 (mxl233@qq.com)
- * @Date: 2023-06-15 12:51:33
+ * @Date: 2023-06-15 20:51:33
  * @LastEditors: 开心好梦🥳
- * @LastEditTime: 2023-06-15 21:28:26
+ * @LastEditTime: 2023-08-20 12:16:10
  * @FilePath: ex_21.c
  */
 
@@ -13,24 +13,27 @@ int entab();
 // blanks to achieve the same spacing. Use the same tab stops as for detab. When either a tab or a single blank
 // would suffice to reach a tab stop, which should be given preference?
 int main(){
-    int c, count, restTabCount, blankCount;
-    count = blankCount = 0;
-    restTabCount = TAB;
+    int c;
+    size_t blankCount, p;
+    blankCount = p = 0;
     while ((c = getchar()) != EOF)
     {
-        if(c == ' '){
-            ++blankCount;
-            if(blankCount == restTabCount){
-                entab();
+        if(c == ' ')
+            blankCount++;
+        else{
+            while(blankCount / TAB){    // equal   while( (blankCount / TAB) != 0 )
+                putchar('\t');
+                blankCount -= TAB;
+                p += TAB;
             }
-        }else{
-            if(blankCount != 0){
-                printf(" *%d", blankCount);
-                blankCount = 0;
-            }             
-            printf("%c", c);
+            while(blankCount > 0){
+                putchar(' ');
+                blankCount--;
+                p++;
+            }
+            putchar(c);
+            p++;
         }
-        restTabCount = (restTabCount - 1 + TAB) % TAB;
     }
     
 

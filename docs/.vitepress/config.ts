@@ -2,7 +2,7 @@
  * @Author: 无涯 (mxl233@qq.com)
  * @Date: 2023-05-31 23:05:37
  * @LastEditors: 开心好梦🥳
- * @LastEditTime: 2023-08-27 10:06:42
+ * @LastEditTime: 2023-09-21 17:49:29
  * @FilePath: config.ts
  */
 import { defineConfig } from "vitepress";
@@ -10,7 +10,7 @@ import * as Config from "./configBuild";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "hey",
+  title: "Hi'story",
   description: "Record my learn.",
   base: "/",
   themeConfig: {

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.valid_row{
+    display: flex;
+    gap:4px;
+    align-items: center;
+}
+input[type="text"]{
+    height: 33px;
+}
+
+.valid_row label{
+    color: red;
+}
+
+.valid_row .error{
+    color: red;
+}
+.valid_row .success{
+    color: green;
+}

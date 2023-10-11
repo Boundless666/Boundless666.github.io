@@ -1,0 +1,31 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    padding:10px 20px;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,.3);
+}
+.modal>.title{
+    font-size: 25px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 0px 0px rgba(0,0,0,.2);
+    margin-bottom: 10px;
+}
+.modal>.title>i{
+    font-size: 18px;
+    font-style: normal;
+    color: gray;
+    cursor: pointer;
+   
+}

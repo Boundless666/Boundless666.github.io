@@ -19,11 +19,11 @@ hero:
     #   link: /backend/cSharp/
 features:
   - icon: 😗
-    title: 很久没更新了
-    details: 主要是因为写了一些代码后还需要复制到markdown文件里面很麻烦的...不过现在好了😉 最近发现了可以在vitepress的markdown中使用导入操作 轻松多了
+    title: 我是...
+    details: 嗐 沉淀沉淀沉淀...
   - icon: 😉
     title: 待做
-    details: 缺一个更新日志😉
+    details: 缺一个更新日志...
   # - icon: 😉
   #   title: 我可以的
   #   details: Maybe not today,maybe not tomorrow,and maybe not next month.But only thing is true,i will be the champion one day.I promise.
